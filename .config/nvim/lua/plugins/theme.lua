@@ -23,6 +23,6 @@ local function _2_()
     return nil
   end
   theme.setup({style = "night", styles = {comments = {italic = true}, floats = "dark", functions = {}, keywords = {italic = true}, sidebars = "dark", variables = {}}, on_colors = _3_, on_highlights = _4_, terminal_colors = true})
-  return vim.cmd("colorscheme tokyonight")
+  return vim.cmd("colorscheme tokyonight-night")
 end
 return {{"folke/tokyonight.nvim", priority = 1000, dependencies = {"nvim-tree/nvim-web-devicons"}, config = _2_, lazy = false}}

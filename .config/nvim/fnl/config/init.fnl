@@ -4,6 +4,10 @@
 
 ;space is reserved to be lead
 (nvim.set_keymap :n :<space> :<nop> {:noremap true})
+(nvim.set_keymap :n :<C-h> :<C-w>h {:noremap true})
+(nvim.set_keymap :n :<C-j> :<C-w>j {:noremap true})
+(nvim.set_keymap :n :<C-k> :<C-w>k {:noremap true})
+(nvim.set_keymap :n :<C-l> :<C-w>l {:noremap true})
 
 ;sets a nvim global options
 (let [options
@@ -30,4 +34,6 @@
   (each [option value (pairs options)]
     (core.assoc nvim.o option value)))
 
+(set vim.wo.relativenumber true)
+(set vim.opt.cursorline true)
 {}

@@ -15,4 +15,10 @@
                                                     :json
                                                     :lua
                                                     :markdown
-                                                    :yaml]})))}]
+                                                    :yaml
+                                                    :sql
+                                                    :kotlin
+                                                    :http
+                                                    :python
+                                                    :terraform
+                                                    :vimdoc]})))}]

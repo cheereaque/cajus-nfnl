@@ -16,7 +16,7 @@ define_signs("Diagnostic")
 local function _2_()
   local lsp = require("lspconfig")
   local cmplsp = require("cmp_nvim_lsp")
-  local handlers = {["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {severity_sort = true, update_in_insert = true, underline = true, virtual_text = false}), ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = "single"}), ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = "single"})}
+  local handlers = {["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {severity_sort = true, update_in_insert = true, underline = true, virtual_text = true}), ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = "single"}), ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = "single"})}
   local capabilities = cmplsp.default_capabilities()
   local before_init
   local function _3_(params)
@@ -44,6 +44,7 @@ local function _2_()
     return nvim.buf_set_keymap(bufnr, "n", "<leader>li", ":lua require('telescope.builtin').lsp_implementations()<cr>", {noremap = true})
   end
   on_attach = _4_
-  return lsp.clojure_lsp.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
+  lsp.clojure_lsp.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
+  return lsp.pyright.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
 end
 return {{"neovim/nvim-lspconfig", config = _2_}}

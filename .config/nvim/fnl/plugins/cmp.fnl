@@ -21,6 +21,7 @@
   :dependencies [:hrsh7th/cmp-buffer
                  :hrsh7th/cmp-nvim-lsp
                  :hrsh7th/cmp-vsnip
+                 :hrsh7th/cmp-cmdline
                  :PaterJason/cmp-conjure
                  :L3MON4D3/LuaSnip
                  :saadparwaiz1/cmp_luasnip]
@@ -53,4 +54,8 @@
                                                           {1 :i 2 :s})}
                           :snippet {:expand (fn [args]
                                               (luasnip.lsp_expand args.body))}
-                          :sources cmp-srcs})))}]
+                          :sources cmp-srcs})
+
+              (cmp.setup.filetype "sql" {:sources (cmp.config.sources
+                                                    [{:name :vim-dadbod-completion}
+                                                     {:name :buffer}])})))}]

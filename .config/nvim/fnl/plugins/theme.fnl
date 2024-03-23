@@ -37,4 +37,4 @@
                                                                    :fg colors.fg_dark})
                                              (set highlight.NonText {:fg (theme-util.lighten colors.bg 0.9)}))
                             :terminal_colors true})
-              (vim.cmd "colorscheme tokyonight")))}]
+              (vim.cmd "colorscheme tokyonight-night")))}]

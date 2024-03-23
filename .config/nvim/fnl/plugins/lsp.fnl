@@ -25,7 +25,7 @@
                               {:severity_sort true
                                :update_in_insert true
                                :underline true
-                               :virtual_text false})
+                               :virtual_text true})
                             "textDocument/hover"
                             (vim.lsp.with
                               vim.lsp.handlers.hover
@@ -63,4 +63,10 @@
               (lsp.clojure_lsp.setup {:on_attach on_attach
                                       :handlers handlers
                                       :before_init before_init
-                                      :capabilities capabilities})))}]
+                                      :capabilities capabilities})
+
+              ;; Python
+              (lsp.pyright.setup {:on_attach on_attach
+                                  :handlers handlers
+                                  :before_init before_init
+                                  :capabilities capabilities})))}]
