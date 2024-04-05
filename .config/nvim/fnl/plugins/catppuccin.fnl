@@ -5,5 +5,5 @@
   :name :catppuccin
   :priority 1000
   :config #(let [catppuccin (require :catppuccin)]
-             (catppuccin.setup {:flavour :frappe})
-             (vim.cmd "colorscheme catppuccin"))}]
+             (catppuccin.setup {:flavour :frappe}))}]
+             ; (vim.cmd "colorscheme catppuccin"))}]

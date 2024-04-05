@@ -4,7 +4,6 @@ local autoload = _local_1_["autoload"]
 local nvim = autoload("nvim")
 local function _2_()
   local catppuccin = require("catppuccin")
-  catppuccin.setup({flavour = "frappe"})
-  return vim.cmd("colorscheme catppuccin")
+  return catppuccin.setup({flavour = "frappe"})
 end
 return {{"catppuccin/nvim", name = "catppuccin", priority = 1000, config = _2_}}
